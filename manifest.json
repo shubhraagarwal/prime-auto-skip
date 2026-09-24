@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Prime Auto Skip",
-  "version": "1.6.0",
-  "description": "Attempts to seek past Prime Video ads and presses Skip Intro automatically.",
+  "name": "Prime Auto Skip + Netflix Intro",
+  "version": "1.7.0",
+  "description": "Skips Prime Video ads and intros, and automatically clicks Skip Intro on Netflix.",
   "content_scripts": [
     {
       "matches": [
@@ -14,6 +14,14 @@
       "js": ["content.js"],
       "run_at": "document_idle",
       "all_frames": true
+    },
+    {
+      "matches": [
+        "https://*.netflix.com/*",
+        "https://netflix.com/*"
+      ],
+      "js": ["netflix-intro.js"],
+      "run_at": "document_idle"
     }
   ]
 }
