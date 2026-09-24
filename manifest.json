@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Prime Auto Skip",
+  "version": "1.6.0",
+  "description": "Attempts to seek past Prime Video ads and presses Skip Intro automatically.",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.primevideo.com/*",
+        "https://primevideo.com/*",
+        "https://www.amazon.com/gp/video/*",
+        "https://www.amazon.in/gp/video/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
